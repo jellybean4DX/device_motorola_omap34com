@@ -107,7 +107,6 @@ PRODUCT_COPY_FILES := \
 	$(DEVICE_PREBUILT)/usr/idc/sholes-keypad.idc:system/usr/idc/sholes-keypad.idc \
 	$(DEVICE_PREBUILT)/usr/keylayout/cpcap-key.kl:system/usr/keylayout/cpcap-key.kl \
 	$(DEVICE_PREBUILT)/usr/keylayout/qtouch-touchscreen.kl:system/usr/keylayout/qtouch-touchscreen.kl \
-	$(DEVICE_PREBUILT)/usr/keylayout/sholes-keypad.kl:system/usr/keylayout/sholes-keypad.kl \
 	$(DEVICE_PREBUILT)/usr/keychars/cpcap-key.kcm:system/usr/keychars/cpcap-key.kcm \
 	$(DEVICE_PREBUILT)/usr/keychars/qtouch-touchscreen.kcm:system/usr/keychars/qtouch-touchscreen.kcm \
 	$(DEVICE_PREBUILT)/usr/keychars/sholes-keypad.kcm:system/usr/keychars/sholes-keypad.kcm
@@ -135,20 +134,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	$(DEVICE_PREBUILT)/bin/mount_ext3.sh:system/bin/mount_ext3.sh \
 	$(DEVICE_PREBUILT)/bin/adbd:system/bin/adbd \
-	$(DEVICE_PREBUILT)/etc/apns-conf.xml:system/etc/apns-conf.xml \
 	$(DEVICE_PREBUILT)/etc/egl.cfg:system/etc/egl.cfg \
 	$(DEVICE_PREBUILT)/etc/gps.conf:system/etc/gps.conf \
-	$(DEVICE_PREBUILT)/etc/media_profiles.xml:system/etc/media_profiles.xml \
 	$(DEVICE_PREBUILT)/etc/powervr.ini:system/etc/powervr.ini \
 	$(DEVICE_PREBUILT)/etc/vold.fstab:system/etc/vold.fstab \
-	$(DEVICE_PREBUILT)/etc/sysctl.conf:system/etc/sysctl.conf \
 	$(DEVICE_PREBUILT)/etc/init.d/12scheduler:system/etc/init.d/12scheduler \
 	$(DEVICE_PREBUILT)/etc/init.d/13kernel:system/etc/init.d/13kernel \
 	$(DEVICE_PREBUILT)/etc/init.d/14multitouch:system/etc/init.d/14multitouch \
 	$(DEVICE_PREBUILT)/xbin/multitouch:system/xbin/multitouch \
-	$(DEVICE_PREBUILT)/xbin/scheduler:system/xbin/scheduler \
-	$(DEVICE_PREBUILT)/media/bootanimation.zip:system/media/bootanimation.zip
-
+	$(DEVICE_PREBUILT)/xbin/scheduler:system/xbin/scheduler
 
 # Permissions files
 PRODUCT_COPY_FILES += \
@@ -175,7 +169,6 @@ PRODUCT_COPY_FILES += \
 
 # Hijack files
 PRODUCT_COPY_FILES += \
-	$(DEVICE_PREBUILT)/bin/hijack:system/bin/hijack \
 	$(DEVICE_PREBUILT)/bin/hijack.log_dump:system/bin/hijack.log_dump \
 
 # Copy all common kernel modules
