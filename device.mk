@@ -143,6 +143,10 @@ PRODUCT_COPY_FILES += \
 	$(DEVICE_PREBUILT)/etc/init.d/14multitouch:system/etc/init.d/14multitouch \
 	$(DEVICE_PREBUILT)/xbin/multitouch:system/xbin/multitouch \
 	$(DEVICE_PREBUILT)/xbin/scheduler:system/xbin/scheduler
+<<<<<<< HEAD
+=======
+
+>>>>>>> cm9/master
 
 # Permissions files
 PRODUCT_COPY_FILES += \
