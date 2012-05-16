@@ -91,9 +91,6 @@ PRODUCT_PACKAGES += \
 	VisualizationWallpapers MagicSmokeWallpapers \
 	librs_jni
 
-# Themes
-PRODUCT_PACKAGES += ThemeChooser Androidian
-
 # Key Layouts
 PRODUCT_COPY_FILES := \
 	$(DEVICE_PREBUILT)/usr/idc/cpcap-key.idc:system/usr/idc/cpcap-key.idc \
