@@ -47,15 +47,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libEGL libGLESv2 libGLESv1_CM
 
-# for jpeg hw encoder/decoder
+# Jpeg hw encoder/decoder
 PRODUCT_PACKAGES += \
 	libskiahw libstagefrighthw \
 	libOMX.TI.JPEG.Encoder libOMX.TI.JPEG.decoder \
 
+# DSP
+PRODUCT_PACKAGES += \
+	cexec.out libbridge
+
 # OMX
 PRODUCT_PACKAGES += \
-	dspexec \
-	libbridge \
 	libLCML \
 	libOMX_Core \
 	libOMX.TI.AAC.decode \
@@ -84,7 +86,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += mot_boot_mode charge_only_mode
 
 # Apps and bin
-PRODUCT_PACKAGES += Superuser su FileManager Torch Usb
+PRODUCT_PACKAGES += Superuser su FileManager Torch Usb Apollo
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
