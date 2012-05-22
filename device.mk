@@ -193,6 +193,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.HOME_APP_ADJ=1 \
 	dalvik.vm.checkjni=false
 
+
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 

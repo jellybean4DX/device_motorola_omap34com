@@ -28,5 +28,6 @@ PRODUCT_PROPERTY_OVERRIDES := \
 PRODUCT_COPY_FILES := \
     vendor/b00sted/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony.mk)

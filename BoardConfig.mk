@@ -127,6 +127,7 @@ TARGET_PROVIDES_RELEASETOOLS := true
 #TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/motorola/omap34com/releasetools/droid_ota_from_target_files
 TARGET_CUSTOM_RELEASETOOL := vendor/b00sted/tools/squisher
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := vendor/b00sted/tools/droid_ota_from_target_files
+
 TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := device/motorola/omap34com/releasetools/droid_img_from_target_files
 
 # Misc.
