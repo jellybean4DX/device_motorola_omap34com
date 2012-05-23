@@ -46,6 +46,9 @@ PRODUCT_PACKAGES += \
 # ICS graphics
 PRODUCT_PACKAGES += \
 	libEGL libGLESv2 libGLESv1_CM
+ifdef OMAP_ENHANCEMENT
+PRODUCT_PACKAGES += += hwcomposer.omap3
+endif
 
 # Jpeg hw encoder/decoder
 PRODUCT_PACKAGES += \
@@ -83,7 +86,7 @@ PRODUCT_COPY_FILES += \
 	system/bluetooth/data/main.conf:system/etc/bluetooth/main.conf
 
 # Core
-PRODUCT_PACKAGES += mot_boot_mode charge_only_mode
+PRODUCT_PACKAGES += mot_boot_mode charge_only_mode lights.omap3
 
 # Apps and bin
 PRODUCT_PACKAGES += Superuser su FileManager Torch Usb Apollo
@@ -124,6 +127,23 @@ PRODUCT_COPY_FILES += \
 	$(DEVICE_PREBUILT)/imgtec/libgles1_texture_stream.so:system/lib/egl/libgles1_texture_stream.so \
 	$(DEVICE_PREBUILT)/imgtec/libgles2_texture_stream.so:system/lib/egl/libgles2_texture_stream.so \
 	$(DEVICE_PREBUILT)/imgtec/gralloc.omap3.so:system/lib/hw/gralloc.omap3.so
+
+# DSP
+PRODUCT_COPY_FILES += \
+	$(DEVICE_PREBUILT)/TI_DSP/bios/baseimage.dof:system/lib/dsp/baseimage.dof \
+	$(DEVICE_PREBUILT)/TI_DSP/codecs/conversions.dll64P:system/lib/dsp/conversions.dll64P \
+	$(DEVICE_PREBUILT)/TI_DSP/codecs/dctn_dyn.dll64P:system/lib/dsp/dctn_dyn.dll64P \
+	$(DEVICE_PREBUILT)/TI_DSP/codecs/h264vdec_sn.dll64P:system/lib/dsp/h264vdec_sn.dll64P \
+	$(DEVICE_PREBUILT)/TI_DSP/codecs/jpegdec_sn.dll64P:system/lib/dsp/jpegdec_sn.dll64P \
+	$(DEVICE_PREBUILT)/TI_DSP/codecs/jpegenc_sn.dll64P:system/lib/dsp/jpegenc_sn.dll64P \
+	$(DEVICE_PREBUILT)/TI_DSP/codecs/m4venc_sn.dll64P:system/lib/dsp/m4venc_sn.dll64P \
+	$(DEVICE_PREBUILT)/TI_DSP/codecs/mp4vdec_sn.dll64P:system/lib/dsp/mp4vdec_sn.dll64P \
+	$(DEVICE_PREBUILT)/TI_DSP/codecs/mpeg4aacdec_sn.dll64P:system/lib/dsp/mpeg4aacdec_sn.dll64P \
+	$(DEVICE_PREBUILT)/TI_DSP/codecs/postprocessor_dualout.dll64P:system/lib/dsp/postprocessor_dualout.dll64P \
+	$(DEVICE_PREBUILT)/TI_DSP/codecs/qosdyn_3430.dll64P:system/lib/dsp/qosdyn_3430.dll64P \
+	$(DEVICE_PREBUILT)/TI_DSP/codecs/ringio.dll64P:system/lib/dsp/ringio.dll64P \
+	$(DEVICE_PREBUILT)/TI_DSP/codecs/usn.dll64P:system/lib/dsp/usn.dll64P \
+	$(DEVICE_PREBUILT)/TI_DSP/codecs/vpp_sn.dll64P:system/lib/dsp/vpp_sn.dll64P
 
 # Prebuilts
 PRODUCT_COPY_FILES += \
