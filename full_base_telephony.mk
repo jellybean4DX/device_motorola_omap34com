@@ -25,17 +25,15 @@ PRODUCT_PACKAGES := \
 PRODUCT_PROPERTY_OVERRIDES := \
     keyguard.no_require_sim=true
 
-ifeq ($(TARGET_PRODUCT), b00stedICS_shadow)
-	PRODUCT_COPY_FILES := \
-    		vendor/b00sted/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
-endif
-
-ifeq ($(TARGET_PRODUCT), b00stedICS_droid2)
-	PRODUCT_COPY_FILES := \
-    		vendor/b00sted/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
-endif
-
-ifeq ($(TARGET_PRODUCT), b00stedICS_droid2we)
+ifneq ($(TARGET_PRODUCT), b00stedICS_droid2we)
+	ifeq ($(TARGET_PRODUCT), b00stedICS_shadow)
+		PRODUCT_COPY_FILES := \
+                        vendor/b00sted/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+	else
+		PRODUCT_COPY_FILES := \
+    		        vendor/b00sted/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+        endif
+else
 	PRODUCT_COPY_FILES := \
     		vendor/b00sted/prebuilt/common/etc/apns-conf-gsm.xml:system/etc/apns-conf.xml
 endif
