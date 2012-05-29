@@ -129,7 +129,6 @@ PRODUCT_COPY_FILES += \
 	$(DEVICE_PREBUILT)/imgtec/gralloc.omap3.so:system/lib/hw/gralloc.omap3.so
 
 # DSP
-<<<<<<< HEAD
 #This causes issue with camera. Half done omapzoom port maybe?
 #PRODUCT_COPY_FILES += \
 #	$(DEVICE_PREBUILT)/TI_DSP/bios/baseimage.dof:system/lib/dsp/baseimage.dof \
