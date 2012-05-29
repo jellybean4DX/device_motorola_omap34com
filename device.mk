@@ -129,6 +129,7 @@ PRODUCT_COPY_FILES += \
 	$(DEVICE_PREBUILT)/imgtec/gralloc.omap3.so:system/lib/hw/gralloc.omap3.so
 
 # DSP
+<<<<<<< HEAD
 #This causes issue with camera. Half done omapzoom port maybe?
 #PRODUCT_COPY_FILES += \
 #	$(DEVICE_PREBUILT)/TI_DSP/bios/baseimage.dof:system/lib/dsp/baseimage.dof \
@@ -159,6 +160,7 @@ PRODUCT_COPY_FILES += \
 #	$(DEVICE_PREBUILT)/TI_DSP/codecs/wmadec_sn.dll64P:system/lib/dsp/wmadec_sn.dll64P \
 #	$(DEVICE_PREBUILT)/TI_DSP/codecs/wmv9dec_sn.dll64P:system/lib/dsp/wmv9dec_sn.dll64P
 
+
 # Prebuilts
 PRODUCT_COPY_FILES += \
 	$(DEVICE_PREBUILT)/bin/mount_ext3.sh:system/bin/mount_ext3.sh \
@@ -167,6 +169,9 @@ PRODUCT_COPY_FILES += \
 	$(DEVICE_PREBUILT)/etc/gps.conf:system/etc/gps.conf \
 	$(DEVICE_PREBUILT)/etc/powervr.ini:system/etc/powervr.ini \
 	$(DEVICE_PREBUILT)/etc/vold.fstab:system/etc/vold.fstab \
+        $(DEVICE_PREBUILT)/etc/sysctl.conf:system/etc/sysctl.conf \
+        $(DEVICE_PREBUILT)/etc/init.d/00adb_during_boot:system/etc/init.d/00adb_during_boot \
+	$(DEVICE_PREBUILT)/etc/init.d/00adb_during_boot:system/etc/init.d/00adb_during_boot \
 	$(DEVICE_PREBUILT)/etc/init.d/12scheduler:system/etc/init.d/12scheduler \
 	$(DEVICE_PREBUILT)/etc/init.d/13kernel:system/etc/init.d/13kernel \
 	$(DEVICE_PREBUILT)/etc/init.d/14multitouch:system/etc/init.d/14multitouch \
