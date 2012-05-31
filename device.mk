@@ -171,6 +171,7 @@ PRODUCT_COPY_FILES += \
         $(DEVICE_PREBUILT)/etc/sysctl.conf:system/etc/sysctl.conf \
         $(DEVICE_PREBUILT)/etc/init.d/00adb_during_boot:system/etc/init.d/00adb_during_boot \
 	$(DEVICE_PREBUILT)/etc/init.d/00adb_during_boot:system/etc/init.d/00adb_during_boot \
+	$(DEVICE_PREBUILT)/etc/init.d/05mountsd:system/etc/init.d/05mountsd \
 	$(DEVICE_PREBUILT)/etc/init.d/12scheduler:system/etc/init.d/12scheduler \
 	$(DEVICE_PREBUILT)/etc/init.d/13kernel:system/etc/init.d/13kernel \
 	$(DEVICE_PREBUILT)/etc/init.d/14multitouch:system/etc/init.d/14multitouch \
@@ -229,7 +230,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.telephony.call_ring.multiple=false \
 	ro.kernel.android.checkjni=0 \
 	ro.HOME_APP_ADJ=1 \
-	dalvik.vm.checkjni=false
+	dalvik.vm.checkjni=false \
+	com.ti.omap_compat=1
+
+ifdef OMAP_ENHANCEMENT
+PRODUCT_PROPERTY_OVERRIDES += com.ti.omap_enhancement=true
+endif
 
 
 # we have enough storage space to hold precise GC data
