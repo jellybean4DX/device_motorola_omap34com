@@ -617,6 +617,14 @@ char *camera_get_parameters(struct camera_device *device)
         camera_set_preview_window(device, lcdev->window);
     }
 
+/*  empty KEY_SUPPORTED_VIDEO_SIZES indicates that the video resolution
+    should be set via the preview resolution.
+    Milestone's camera:
+    video-size-values: 176x144,320x240,352x288,640x480,720x480,720x576,1280x720
+    preview-size-values: 176x144,320x240,352x288,640x480,720x480,720x576,848x480
+    So let's return an empty list to allow the 848x480 video recording. */
+    params.set(CameraParameters::KEY_SUPPORTED_VIDEO_SIZES, "");
+
 #ifdef LOG_FULL_PARAMS
     params.dump();
 #endif
