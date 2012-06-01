@@ -23,7 +23,6 @@
 #define LOG_FULL_PARAMS
 
 #include <hardware/camera.h>
-#include <fcnt1.h>
 #include <ui/Overlay.h>
 #include <binder/IMemory.h>
 #include <hardware/gralloc.h>
@@ -65,12 +64,6 @@ static int mNumVideoFramesDropped = 0;
 const unsigned int PREVIEW_THROTTLE_THRESHOLD = 6;
 const unsigned int SOFT_DROP_THRESHOLD = 12;
 const unsigned int HARD_DROP_THRESHOLD = 15;
-
-/* The following values (in nsecs) are used to limit the preview framerate
-   to reduce the CPU usage. */
-
-const int MIN_PREVIEW_FRAME_INTERVAL = 80000000;
-const int MIN_PREVIEW_FRAME_INTERVAL_THROTTLED = 200000000;
 
 struct legacy_camera_device {
     camera_device_t device;
@@ -232,8 +225,7 @@ static void overlayQueueBuffer(void *data, void *buffer, size_t size)
     legacy_camera_device *lcdev = (legacy_camera_device *) data;
     long long now = systemTime();
 
-    if ((now - mLastPreviewTime) > (mThrottlePreview ? 
-             MIN_PREVIEW_FRAME_INTERVAL_THROTTLED : MIN_PREVIEW_FRAME_INTERVAL)) {
+    if ((now - mLastPreviewTime) < (mThrottlePreview ? 200000000 : 60000000)) {
         return;
     }
 
@@ -244,15 +236,6 @@ static void overlayQueueBuffer(void *data, void *buffer, size_t size)
     mLastPreviewTime = now;
     Overlay::Format format = (Overlay::Format) lcdev->overlay->getFormat();
     processPreviewData((char*)buffer, size, lcdev, format);
-}
-
-static void flashRedLed(bool enable) {
-    int fd = ::open("/sys/class/leds/red/brightness", O_WRONLY);
-    if (fd >= 0) {
-        const char *value = enable ? "255" : "0";
-       write(fd, value, strlen(value));
-       close(fd);
-    }
 }
 
 camera_memory_t* GenClientData(const sp<IMemory> &dataPtr,
@@ -324,8 +307,8 @@ void CameraHAL_DataTSCb(nsecs_t timestamp, int32_t msg_type,
         LOGV("%s: preview throttled (fr. queued/throttle thres.: %d/%d)",
              __FUNCTION__, framesSent, PREVIEW_THROTTLE_THRESHOLD);
         if ((mPreviousVideoFrameDropped == false && framesSent > SOFT_DROP_THRESHOLD) ||
-             framesSent > HARD_DROP_THRESHOLD) {
-            flashRedLed(true);
+             framesSent > HARD_DROP_THRESHOLD)
+        {
             LOGW("Frame has to be dropped! (fr. queued/soft thres./hard thres.: %d/%d/%d)",
                  framesSent, SOFT_DROP_THRESHOLD, HARD_DROP_THRESHOLD);
             mPreviousVideoFrameDropped = true;
@@ -344,14 +327,11 @@ void CameraHAL_DataTSCb(nsecs_t timestamp, int32_t msg_type,
 
     mem = GenClientData(dataPtr, lcdev);
     if (mem != NULL) {
+        mPreviousVideoFrameDropped = false;
         LOGV("%s: Posting data to client timestamp:%lld", __FUNCTION__, systemTime());
         lcdev->sentFrames.push_back(mem);
         lcdev->data_timestamp_callback(timestamp, msg_type, mem, 0, lcdev->user);
         lcdev->hwif->releaseRecordingFrame(dataPtr);
-        if (mPreviousVideoFrameDropped) {
-                flashRedLed(false);
-                mPreviousVideoFrameDropped = false;
-        }
     } else {
         LOGV("%s: ERROR allocating memory from client", __FUNCTION__);
     }
@@ -494,11 +474,11 @@ void camera_disable_msg_type(struct camera_device *device, int32_t msg_type)
 {
     legacy_camera_device *lcdev = (legacy_camera_device*) device;
     LOGV("%s: msg_type:%d\n", __FUNCTION__, msg_type);
-    lcdev->hwif->disableMsgType(msg_type);
     if (msg_type == CAMERA_MSG_VIDEO_FRAME) {
         LOGV("%s: releasing stale video frames", __FUNCTION__);
         releaseCameraFrames(lcdev);
     }
+    lcdev->hwif->disableMsgType(msg_type);
 }
 
 int camera_msg_type_enabled(struct camera_device *device, int32_t msg_type)
@@ -545,7 +525,6 @@ void camera_stop_recording(struct camera_device *device)
     legacy_camera_device *lcdev = (legacy_camera_device*) device;
     LOGI("%s: Number of frames dropped by CameraHAL: %d", __FUNCTION__, mNumVideoFramesDropped);
     mThrottlePreview = false;
-    flashRedLed(false);
     lcdev->hwif->stopRecording();
 }
 
