@@ -86,7 +86,9 @@ PRODUCT_COPY_FILES += \
 	system/bluetooth/data/main.conf:system/etc/bluetooth/main.conf
 
 # Core
-PRODUCT_PACKAGES += mot_boot_mode charge_only_mode lights.omap3
+PRODUCT_PACKAGES += \
+	mot_boot_mode charge_only_mode \
+	lights.omap3 e2fsck usbd
 
 # Apps and bin
 PRODUCT_PACKAGES += Superuser su FileManager Torch Usb Apollo
@@ -168,10 +170,8 @@ PRODUCT_COPY_FILES += \
 	$(DEVICE_PREBUILT)/etc/gps.conf:system/etc/gps.conf \
 	$(DEVICE_PREBUILT)/etc/powervr.ini:system/etc/powervr.ini \
 	$(DEVICE_PREBUILT)/etc/vold.fstab:system/etc/vold.fstab \
-        $(DEVICE_PREBUILT)/etc/sysctl.conf:system/etc/sysctl.conf \
-        $(DEVICE_PREBUILT)/etc/init.d/00adb_during_boot:system/etc/init.d/00adb_during_boot \
-	$(DEVICE_PREBUILT)/etc/init.d/00adb_during_boot:system/etc/init.d/00adb_during_boot \
-	$(DEVICE_PREBUILT)/etc/init.d/05mountsd:system/etc/init.d/05mountsd \
+	$(DEVICE_PREBUILT)/etc/init.d/01sysctl:system/etc/init.d/01sysctl \
+        $(DEVICE_PREBUILT)/etc/init.d/05mountsd:system/etc/init.d/05mountsd \
 	$(DEVICE_PREBUILT)/etc/init.d/06ion:system/etc/init.d/06ion \
 	$(DEVICE_PREBUILT)/etc/init.d/12scheduler:system/etc/init.d/12scheduler \
 	$(DEVICE_PREBUILT)/etc/init.d/13kernel:system/etc/init.d/13kernel \
