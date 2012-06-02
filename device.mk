@@ -232,7 +232,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.kernel.android.checkjni=0 \
 	ro.HOME_APP_ADJ=1 \
 	dalvik.vm.checkjni=false \
-	com.ti.omap_compat=1
+	com.ti.omap_compat=1 \
+        com.ti.omap_enhancement=1
 
 ifdef OMAP_ENHANCEMENT
 PRODUCT_PROPERTY_OVERRIDES += com.ti.omap_enhancement=true
