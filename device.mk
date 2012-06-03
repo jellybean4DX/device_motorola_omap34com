@@ -99,6 +99,10 @@ PRODUCT_PACKAGES += \
 	VisualizationWallpapers MagicSmokeWallpapers \
 	librs_jni
 
+#Testing
+PRODUCT_PACKAGES += \
+        libfnc
+
 # Key Layouts
 PRODUCT_COPY_FILES := \
 	$(DEVICE_PREBUILT)/usr/idc/cpcap-key.idc:system/usr/idc/cpcap-key.idc \
