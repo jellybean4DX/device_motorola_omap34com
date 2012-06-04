@@ -78,7 +78,7 @@ struct legacy_camera_device {
     preview_stream_ops             *window;
 
     /* Old world */
-    sp<CameraHardwareInterface>    hwif;
+    sp<MotoCameraWrapper>          hwif;
     gralloc_module_t const         *gralloc;
     camera_memory_t*               clientData;
     vector<camera_memory_t*>       sentFrames;
