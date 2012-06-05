@@ -275,7 +275,7 @@ static void dataCallback(int32_t msgType, const sp<IMemory>& dataPtr,
     char *buffer;
 
     LOGV("%s: msgType:%d user:%p", __FUNCTION__, msgType, user);
-    if (lcdev->data_callback && lcdev->request_memory) {
+    if (lcdev->data_callback  != NULL && lcdev->request_memory != NULL) {
         if (lcdev->clientData != NULL) {
             lcdev->clientData->release(lcdev->clientData);
         }
@@ -331,7 +331,6 @@ static void dataTimestampCallback(nsecs_t timestamp, int32_t msg_type,
         return;
     }
 
-    camera_memory_t *mem = GenClientData(lcdev, dataPtr);
     if (mem != NULL) {
         mPreviousVideoFrameDropped = false;
         LOGV("%s: Posting data to client timestamp:%lld", __FUNCTION__, systemTime());
@@ -343,7 +342,7 @@ static void dataTimestampCallback(nsecs_t timestamp, int32_t msg_type,
     }
 }
 
-static void notifyCallback(int32_t msg_type, int32_t ext1, int32_t ext2, void *user)
+static void notifyCallback(int32_t msgType, int32_t ext1, int32_t ext2, void *user)
 {
     legacy_camera_device *lcdev = (legacy_camera_device *) user;
     LOGV("%s: msg_type:%d ext1:%d ext2:%d user:%p", __FUNCTION__, msgType, ext1, ext2, user);
@@ -704,12 +703,12 @@ static int camera_device_open(const hw_module_t* module, const char *name,
     cameraId = atoi(name);
     LOGD("%s: name:%s device:%p cameraId:%d\n", __FUNCTION__, name, device, cameraId);
 
-    lcdev = (legacy_camera_device *)calloc(sizeof(*lcdev));
+    lcdev = (legacy_camera_device *)malloc(sizeof(*lcdev));
     if (lcdev == NULL) {
         return -ENOMEM;
     }
 
-    camera_ops = (camera_device_ops_t *)calloc(sizeof(*camera_ops));
+    camera_ops = (camera_device_ops_t *)malloc(sizeof(*camera_ops));
     if (camera_ops == NULL) {
         free(lcdev);
         return -ENOMEM;
