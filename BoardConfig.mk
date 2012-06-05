@@ -88,6 +88,7 @@ WIFI_AP_DRIVER_MODULE_ARG   := ""
 BOARD_HOSTAPD_NO_ENTROPY    := true
 BOARD_HOSTAPD_DRIVER        := true
 BOARD_HOSTAPD_DRIVER_NAME   := wilink
+BOARD_WITHOUT_IPV6_QUOTA := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -123,7 +124,6 @@ TARGET_NEEDS_MOTOROLA_HIJACK := true
 
 # OTA Packaging
 TARGET_PROVIDES_RELEASETOOLS := true
-
 #use b00sted versions
 #TARGET_CUSTOM_RELEASETOOL := device/motorola/omap34com/releasetools/squisher
 #TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/motorola/omap34com/releasetools/droid_ota_from_target_files
