@@ -62,9 +62,9 @@ static int mNumVideoFramesDropped = 0;
    If the number gets even over the HARD_DROP_THRESHOLD, drop the frames
    without further conditions. */
 
-const unsigned int PREVIEW_THROTTLE_THRESHOLD = 6;
-const unsigned int SOFT_DROP_THRESHOLD = 12;
-const unsigned int HARD_DROP_THRESHOLD = 15;
+const signed int PREVIEW_THROTTLE_THRESHOLD = 6;
+const signed int SOFT_DROP_THRESHOLD = 12;
+const signed int HARD_DROP_THRESHOLD = 15;
 
 struct legacy_camera_device {
     camera_device_t device;
@@ -242,8 +242,8 @@ static void overlayQueueBuffer(void *data, void *buffer, size_t size)
     processPreviewData((char*)buffer, size, lcdev, format);
 }
 
-static camera_memory_t* GenClientData(legacy_camera_device *lcdev,
-                                         const sp<IMemory> &dataPtr)
+static camera_memory_t* GenClientData(const sp<IMemory> &dataPtr,               
+                                                legacy_camera_device *lcdev)
 {
     ssize_t offset;
     size_t size;
