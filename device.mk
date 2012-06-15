@@ -46,9 +46,6 @@ PRODUCT_PACKAGES += \
 # ICS graphics
 PRODUCT_PACKAGES += \
 	libEGL libGLESv2 libGLESv1_CM libgtest
-ifdef OMAP_ENHANCEMENT
-PRODUCT_PACKAGES += += hwcomposer.omap3
-endif
 
 # Jpeg hw encoder/decoder
 PRODUCT_PACKAGES += \
@@ -91,7 +88,7 @@ PRODUCT_PACKAGES += \
 	lights.omap3 e2fsck usbd
 
 # Apps and bin
-PRODUCT_PACKAGES += Superuser su FileManager Torch Usb Apollo
+PRODUCT_PACKAGES += Superuser su FileManager Torch Usb Apollo GanOptimizer
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
@@ -207,6 +204,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	$(DEVICE_PREBUILT)/bin/hijack.log_dump:system/bin/hijack.log_dump \
 
+# HWUI Blacklist
+PRODUCT_COPY_FILES += \
+	device/motorola/omap34com/hwui-whitelist.txt:system/hwui-whitelist.txt
+
 # Copy all common kernel modules
 PRODUCT_COPY_FILES += $(shell \
 	find device/motorola/omap34com/modules -name '*.ko' \
@@ -236,9 +237,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.HOME_APP_ADJ=1 \
 	dalvik.vm.checkjni=false \
 	com.ti.omap_compat=1
-
 ifdef OMAP_ENHANCEMENT
-PRODUCT_PROPERTY_OVERRIDES += com.ti.omap_enhancement=true
+PRODUCT_PROPERTY_OVERRIDES += \
+	com.ti.omap_enhancement=true
 endif
 
 
