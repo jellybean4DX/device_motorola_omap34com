@@ -170,6 +170,7 @@ PRODUCT_COPY_FILES += \
 	$(DEVICE_PREBUILT)/etc/gps.conf:system/etc/gps.conf \
 	$(DEVICE_PREBUILT)/etc/powervr.ini:system/etc/powervr.ini \
 	$(DEVICE_PREBUILT)/etc/vold.fstab:system/etc/vold.fstab \
+        $(DEVICE_PREBUILT)/etc/inetd.conf:system/etc/inetd.conf \
 	$(DEVICE_PREBUILT)/etc/init.d/01sysctl:system/etc/init.d/01sysctl \
         $(DEVICE_PREBUILT)/etc/init.d/05mountsd:system/etc/init.d/05mountsd \
 	$(DEVICE_PREBUILT)/etc/init.d/06ion:system/etc/init.d/06ion \
