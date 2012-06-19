@@ -167,13 +167,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	$(DEVICE_PREBUILT)/bin/mount_ext3.sh:system/bin/mount_ext3.sh \
 	$(DEVICE_PREBUILT)/etc/egl.cfg:system/etc/egl.cfg \
-	$(DEVICE_PREBUILT)/etc/inetd.conf:system/etc/inetd.conf \
 	$(DEVICE_PREBUILT)/etc/gps.conf:system/etc/gps.conf \
-<<<<<<< HEAD
-=======
-	$(DEVICE_PREBUILT)/etc/media_profiles.xml:system/etc/media_profiles.xml \
 	$(DEVICE_PREBUILT)/etc/profile:system/etc/profile \
->>>>>>> cm9/master
 	$(DEVICE_PREBUILT)/etc/powervr.ini:system/etc/powervr.ini \
 	$(DEVICE_PREBUILT)/etc/vold.fstab:system/etc/vold.fstab \
         $(DEVICE_PREBUILT)/etc/inetd.conf:system/etc/inetd.conf \
