@@ -87,7 +87,11 @@ WIFI_AP_DRIVER_MODULE_PATH  := "/system/lib/modules/tiap_drv.ko"
 WIFI_AP_DRIVER_MODULE_NAME  := tiap_drv
 WIFI_AP_FIRMWARE_LOADER     := wlan_ap_loader
 WIFI_AP_DRIVER_MODULE_ARG   := ""
+<<<<<<< HEAD
 BOARD_HOSTAPD_SERVICE_NAME  := true
+=======
+BOARD_HOSTAPD_SERVICE_NAME  := hostap_netd
+>>>>>>> cm9/master
 BOARD_HOSTAPD_NO_ENTROPY    := true
 BOARD_HOSTAPD_DRIVER        := true
 BOARD_HOSTAPD_DRIVER_NAME   := wilink
