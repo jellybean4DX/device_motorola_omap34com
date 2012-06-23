@@ -248,10 +248,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=131072 \
 	hwui.render_dirty_regions=false \
 	wifi.interface=tiwlan0 \
-	wifi.supplicant_scan_interval=180 \
 	wifi.hotspot.ti=1 \
 	wifi.ap.interface=tiap0 \
-	windowsmgr.max_events_per_sec=150 \
+	windowsmgr.max_events_per_sec=240 \
+	debug.egl.callstack=1 \
+	hwui.render_dirty_regions=false \
 	com.ti.omap_compat=1
 ifdef OMAP_ENHANCEMENT
 PRODUCT_PROPERTY_OVERRIDES += \
