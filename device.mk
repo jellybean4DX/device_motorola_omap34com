@@ -255,4 +255,3 @@ PRODUCT_LOCALES += en_US
 
 $(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 $(call inherit-product, hardware/ti/omap3/Android.mk)
-$(call inherit-product-if-exists, vendor/b00sted/configs/omap3.mk)
