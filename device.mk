@@ -165,8 +165,6 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PREBUILT)/etc/vold.fstab:system/etc/vold.fstab \
     $(DEVICE_PREBUILT)/etc/inetd.conf:system/etc/inetd.conf \
     $(DEVICE_PREBUILT)/etc/init.d/01sysctl:system/etc/init.d/01sysctl \
-    $(DEVICE_PREBUILT)/etc/init.d/05mountsd:system/etc/init.d/05mountsd \
-    $(DEVICE_PREBUILT)/etc/init.d/06ion:system/etc/init.d/06ion \
     $(DEVICE_PREBUILT)/etc/init.d/12scheduler:system/etc/init.d/12scheduler \
     $(DEVICE_PREBUILT)/etc/init.d/13kernel:system/etc/init.d/13kernel \
     $(DEVICE_PREBUILT)/etc/init.d/14multitouch:system/etc/init.d/14multitouch \
