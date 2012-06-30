@@ -105,7 +105,6 @@ BOARD_HOSTAPD_DRIVER_NAME   := wilink
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
-BOARD_CUSTOM_BLUEDROID := ../../../device/motorola/omap34com/bluedroid.c
 
 # Sensors
 ENABLE_SENSORS_COMPAT := true
