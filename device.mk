@@ -83,6 +83,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     system/bluetooth/data/main.conf:system/etc/bluetooth/main.conf
 
+#Defy 
+PRODUCT_PACKAGES += libfnc
+
 # Core
 PRODUCT_PACKAGES += \
     mot_boot_mode charge_only_mode \
