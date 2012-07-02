@@ -199,6 +199,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PREBUILT)/bin/hijack.log_dump:system/bin/hijack.log_dump \
 
+ HWUI Whitelist
+PRODUCT_COPY_FILES += \
+device/motorola/omap34com/hwui-whitelist.txt:system/hwui-whitelist.tx
 
 # Copy all common kernel modules
 PRODUCT_COPY_FILES += $(shell \
