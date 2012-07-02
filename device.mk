@@ -201,7 +201,7 @@ PRODUCT_COPY_FILES += \
 
 #HWUI Whitelist
 PRODUCT_COPY_FILES += \
-device/motorola/omap34com/hwui-whitelist.txt:system/hwui-whitelist.tx
+device/motorola/omap34com/hwui-whitelist.txt:system/hwui-whitelist.txt
 
 # Copy all common kernel modules
 PRODUCT_COPY_FILES += $(shell \

@@ -2,6 +2,6 @@ com.adobe.flashplayer
 com.android.browser
 com.android.chrome
 com.android.deskclock
-com.android.gallery3d
+com.android.gallery2
 com.netflix.mediaclient
 com.android.systemui
