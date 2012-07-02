@@ -199,7 +199,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PREBUILT)/bin/hijack.log_dump:system/bin/hijack.log_dump \
 
- HWUI Whitelist
+#HWUI Whitelist
 PRODUCT_COPY_FILES += \
 device/motorola/omap34com/hwui-whitelist.txt:system/hwui-whitelist.tx
 
