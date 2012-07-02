@@ -132,31 +132,30 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PREBUILT)/imgtec/gralloc.omap3.so:system/lib/hw/gralloc.omap3.so
    
 # DSP
-# still buggy
-#PRODUCT_COPY_FILES += \
-#    $(DEVICE_PREBUILT)/TI_DSP/bios/baseimage.dof:system/lib/dsp/baseimage.dof \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/720p_h264vdec_sn.dll64P:system/lib/dsp/720p_h264vdec_sn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/720p_h264venc_sn.dll64P:system/lib/dsp/720p_h264venc_sn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/720p_mp4vdec_sn.dll64P:system/lib/dsp/720p_mp4vdec_sn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/720p_mp4venc_sn.dll64P:system/lib/dsp/720p_mp4venc_sn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/conversions.dll64P:system/lib/dsp/conversions.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/h264vdec_sn.dll64P:system/lib/dsp/h264vdec_sn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/h264venc_sn.dll64P:system/lib/dsp/h264venc_sn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/jpegenc_sn.dll64P:system/lib/dsp/jpegenc_sn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/m4venc_sn.dll64P:system/lib/dsp/m4venc_sn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/mp3dec_sn.dll64P:system/lib/dsp/mp3dec_sn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/mp4vdec_sn.dll64P:system/lib/dsp/mp4vdec_sn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/mpeg4aacdec_sn.dll64P:system/lib/dsp/mpeg4aacdec_sn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/mpeg4aacenc_sn.dll64P:system/lib/dsp/mpeg4aacenc_sn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/nbamrdec_sn.dll64P:system/lib/dsp/nbamrdec_sn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/nbamrenc_sn.dll64P:system/lib/dsp/nbamrenc_sn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/postprocessor_dualout.dll64P:system/lib/dsp/postprocessor_dualout.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/ringio.dll64P:system/lib/dsp/ringio.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/usn.dll64P:system/lib/dsp/usn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/wbamrdec_sn.dll64P:system/lib/dsp/wbamrdec_sn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/wbamrenc_sn.dll64P:system/lib/dsp/wbamrenc_sn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/wmadec_sn.dll64P:system/lib/dsp/wmadec_sn.dll64P \
-#    $(DEVICE_PREBUILT)/TI_DSP/codecs/wmv9dec_sn.dll64P:system/lib/dsp/wmv9dec_sn.dll64P
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PREBUILT)/TI_DSP/bios/baseimage.dof:system/lib/dsp/baseimage.dof \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/720p_h264vdec_sn.dll64P:system/lib/dsp/720p_h264vdec_sn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/720p_h264venc_sn.dll64P:system/lib/dsp/720p_h264venc_sn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/720p_mp4vdec_sn.dll64P:system/lib/dsp/720p_mp4vdec_sn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/720p_mp4venc_sn.dll64P:system/lib/dsp/720p_mp4venc_sn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/conversions.dll64P:system/lib/dsp/conversions.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/h264vdec_sn.dll64P:system/lib/dsp/h264vdec_sn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/h264venc_sn.dll64P:system/lib/dsp/h264venc_sn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/jpegenc_sn.dll64P:system/lib/dsp/jpegenc_sn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/m4venc_sn.dll64P:system/lib/dsp/m4venc_sn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/mp3dec_sn.dll64P:system/lib/dsp/mp3dec_sn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/mp4vdec_sn.dll64P:system/lib/dsp/mp4vdec_sn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/mpeg4aacdec_sn.dll64P:system/lib/dsp/mpeg4aacdec_sn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/mpeg4aacenc_sn.dll64P:system/lib/dsp/mpeg4aacenc_sn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/nbamrdec_sn.dll64P:system/lib/dsp/nbamrdec_sn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/nbamrenc_sn.dll64P:system/lib/dsp/nbamrenc_sn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/postprocessor_dualout.dll64P:system/lib/dsp/postprocessor_dualout.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/ringio.dll64P:system/lib/dsp/ringio.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/usn.dll64P:system/lib/dsp/usn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/wbamrdec_sn.dll64P:system/lib/dsp/wbamrdec_sn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/wbamrenc_sn.dll64P:system/lib/dsp/wbamrenc_sn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/wmadec_sn.dll64P:system/lib/dsp/wmadec_sn.dll64P \
+    $(DEVICE_PREBUILT)/TI_DSP/codecs/wmv9dec_sn.dll64P:system/lib/dsp/wmv9dec_sn.dll64P
   
 
 # Prebuilts
@@ -200,10 +199,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PREBUILT)/bin/hijack.log_dump:system/bin/hijack.log_dump \
 
-
-# HWUI Whitelist
-PRODUCT_COPY_FILES += \
-device/motorola/omap34com/hwui-whitelist.txt:system/hwui-whitelist.txt
 
 # Copy all common kernel modules
 PRODUCT_COPY_FILES += $(shell \
