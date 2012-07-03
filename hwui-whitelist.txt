@@ -5,3 +5,4 @@ com.android.deskclock
 com.android.gallery2
 com.netflix.mediaclient
 com.android.systemui
+con.android.launcher2
