@@ -241,4 +241,4 @@ PRODUCT_LOCALES += en_US
 
 $(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 $(call inherit-product, hardware/ti/omap3/Android.mk)
-$(call inherit-product-if-exists, vendor/motorola/ti_sgx_es5.x/sgx-vendor.mk)
+$(call inherit-product, vendor/b00sted/proprietary/ti_sgx_es5.x/sgx-vendor.mk)
