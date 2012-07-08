@@ -167,7 +167,7 @@ static inline void YUV420spToRGB565(char* rgb, char* yuv420sp, int width,
 }
 
 /* from v4l lib */
-static void YuYVtoYV12 (unsigned char* dest, unsigned char* src, int width, int height, int stride) 
+static void YUYVtoYV12 (unsigned char* dest, unsigned char* src, int width, int height, int stride) 
 {
     int i, j;
     unsigned char *src1;
