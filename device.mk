@@ -226,8 +226,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.ap.interface=tiap0 \
     windowsmgr.max_events_per_sec=240 \
     debug.egl.callstack=1 \
-    com.ti.omap_compat=1 \
-    com.ti.omap_enhancement=$OMAP
+    com.ti.omap_enhancement=true
 
 
 
