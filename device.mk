@@ -193,7 +193,6 @@ PRODUCT_COPY_FILES += $(shell \
 
 # Some overrides never change
 PRODUCT_PROPERTY_OVERRIDES += \
-<<<<<<< HEAD
     mobiledata.interfaces=ppp0 \
     persist.ril.mux.retries=500 \
     persist.ril.mux.sleep=2 \
