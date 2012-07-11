@@ -1,8 +1,0 @@
-com.adobe.flashplayer
-com.android.browser
-com.android.chrome
-com.android.deskclock
-com.android.gallery2
-com.netflix.mediaclient
-com.android.systemui
-con.android.launcher2
