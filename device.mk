@@ -181,10 +181,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PREBUILT)/bin/hijack.log_dump:system/bin/hijack.log_dump \
 
-#HWUI Blscklist
-PRODUCT_COPY_FILES += \
-	device/motorola/omap34com/hwui-blacklist.txt:system/hwui-blacklist.txt
-
 # Copy all common kernel modules
 PRODUCT_COPY_FILES += $(shell \
     find device/motorola/omap34com/modules -name '*.ko' \
@@ -193,7 +189,6 @@ PRODUCT_COPY_FILES += $(shell \
 
 # Some overrides never change
 PRODUCT_PROPERTY_OVERRIDES += \
-<<<<<<< HEAD
     mobiledata.interfaces=ppp0 \
     persist.ril.mux.retries=500 \
     persist.ril.mux.sleep=2 \
