@@ -318,7 +318,7 @@ void CameraHAL_DataCb(int32_t msgType, const sp<IMemory>& dataPtr,
         lcdev->clientData = GenClientData(dataPtr, lcdev);
         if (lcdev->clientData != NULL) {
              ALOGVF("%s: Posting data to client", __FUNCTION__);
-             Alcdev->data_callback(msgType, lcdev->clientData, 0, NULL, lcdev->user);
+             lcdev->data_callback(msgType, lcdev->clientData, 0, NULL, lcdev->user);
         }
     }
 
